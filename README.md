@@ -3,7 +3,7 @@ This project aims at creating a macroeconomic database and produce customizable 
 
 For GDP estimations the Solow growth model is used: (capital stock^(1-labor share)*labor stock^(labor share)*TFP (Total Factor Productivity)
 
-Initial data sources: IMF WEO, Penn World Tables, Maddison Project, World Bank, UN single age population projection for the Medium and Zero Migraiton Scenarios
+Initial data sources: IMF WEO, Penn World Tables, Maddison Project, World Bank, UN single age population projection for the Medium and Zero Migration Scenarios
 
 Default model parameters are estimated from the past or are expert judgments
 The model tries to be comprehensive, and estimates input data when missing (for example the capital stock, based on the typical capital-output ratio for a given GDP per capita level)
