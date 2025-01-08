@@ -30,7 +30,7 @@ required_packages <- c(
   "countrycode",  # For mapping country codes
   "pwt10",        # For accessing Penn World Tables data
   "WDI",          # For accessing World Development Indicators from the World Bank
-  "ggplot2",      # For data visualization
+  "ggplot2",      # For data visualization 
   "ggrepel",      # For labeling points on a chart
   "fst"           # For fast serialization of data.tables
 )

@@ -311,7 +311,7 @@ political_data[
 political_data[, political_trouble_dummy := as.integer(political_violence_intensity == 2 | attempted_coup > 0)]
 
 # -------------------------------
-# 10. Clean Up and Memory Management
+# 10. Clean Up and Memory Management 
 # -------------------------------
 
 # Remove intermediate datasets to free memory

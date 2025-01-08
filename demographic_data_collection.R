@@ -299,7 +299,7 @@ setnames(
 
 # -------------------------------
 # 13. Merge Additional Indicators with Main Demographic Data
-# -------------------------------
+# ------------------------------- 
 
 demographic_data <- merge(
   demographic_data,
