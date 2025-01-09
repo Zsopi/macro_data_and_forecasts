@@ -367,7 +367,7 @@ ggplot() +
             aes(x = year, y = attempted_coup_ratio), 
             color = "red", size = 1) +
   labs(
-    title = "Proportion of Political Trouble and Attempted Coups by Year",
+    title = "Proportion of Countries in Political Trouble and Having Attempted Coups by Year",
     x = "Year",
     y = "Proportion"
   ) +
