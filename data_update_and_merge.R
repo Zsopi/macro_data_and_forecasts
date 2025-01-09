@@ -220,10 +220,10 @@ calculate_lagged_growth(selected_data, "gdp_per_pop_age_15_64", 1, 6)
 message("Saving merged data...")
 
 # Save to FST format for fast future access
-write.fst(selected_data, "selected_data_gpt.fst")
+write.fst(selected_data, "selected_data.fst")
 
 # Save to CSV format using fwrite for speed
-fwrite(selected_data, "selected_data_gpt.csv")
+fwrite(selected_data, "selected_data.csv")
 
 # -------------------------------
 # 13. Clean Up and Free Memory
