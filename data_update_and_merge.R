@@ -106,7 +106,7 @@ setnames(demographic_data, old = old_names_dem, new = new_names_dem, skip_absent
 
 # Economic data columns to retain
 cols_econ <- c(
-  "iso3c", "year", "gdp_pc", "gdp_pc_imf", "inv_imf", "tax_havens_dummy",
+  "iso3c", "year", "gdp_pc", "gdp_pc_imf", "inv_imf", 'inv_wb', "tax_havens_dummy",
   "resource_dummy", "emp_wb", "pop_wb", "pop_imf", "pop_mpd", "rent",
   "gov_spd_imf", "rgdpna", "rgdpo", "rnna", "labsh", "delta", "pop_pwt",
   "emp_pwt", "avh", "hc", "rwtfpna", "rtfpna", "ctfp", "iso2c", "gdp_pc_wb_nom",
@@ -220,10 +220,10 @@ calculate_lagged_growth(selected_data, "gdp_per_pop_age_15_64", 1, 6)
 message("Saving merged data...")
 
 # Save to FST format for fast future access
-write.fst(selected_data, "selected_data_gpt.fst")
+write.fst(selected_data, "selected_data.fst")
 
 # Save to CSV format using fwrite for speed
-fwrite(selected_data, "selected_data_gpt.csv")
+fwrite(selected_data, "selected_data.csv")
 
 # -------------------------------
 # 13. Clean Up and Free Memory
