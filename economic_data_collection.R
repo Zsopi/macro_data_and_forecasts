@@ -32,7 +32,8 @@ required_packages <- c(
   "WDI",          # For accessing World Development Indicators from the World Bank
   "ggplot2",      # For data visualization
   "ggrepel",      # For labeling points on a chart
-  "fst"           # For fast serialization of data.tables
+  "fst",           # For fast serialization of data.tables
+  "openxlsx"      # Reading Excel files
 )
 
 # Install and load packages
@@ -270,7 +271,8 @@ wb_indicators <- c(
   'NY.GDP.FRST.RT.ZS',# Forest rent (% of GDP)
   'SP.POP.TOTL',      # Population, total
   'SL.TLF.TOTL.IN',   # Labor force, total
-  'SL.UEM.TOTL.ZS'    # Unemployment, total (% of total labor force)
+  'SL.UEM.TOTL.ZS',   # Unemployment, total (% of total labor force)
+  'NE.GDI.TOTL.ZS'    # Investment to GDP ratio, %
 )
 
 # Download World Bank data
@@ -300,9 +302,9 @@ wb_data[, rent := NY.GDP.TOTL.RT.ZS - NY.GDP.FRST.RT.ZS]
 # Rename columns for clarity
 setnames(wb_data, 
          old = c('NY.GDP.PCAP.KD', 'NY.GDP.PCAP.PP.KD', 'SP.POP.TOTL', 
-                 'SL.TLF.TOTL.IN', 'SL.UEM.TOTL.ZS'),
+                 'SL.TLF.TOTL.IN', 'SL.UEM.TOTL.ZS', 'NE.GDI.TOTL.ZS'),
          new = c('gdp_pc_wb_nom', 'gdp_pc_wb', 'pop_wb', 
-                 'labor_force_wb', 'unempl_wb'))
+                 'labor_force_wb', 'unempl_wb', 'inv_wb'))
 
 # Calculate employment from labor force and unemployment
 wb_data[, emp_wb := labor_force_wb * (1 - unempl_wb / 100)]
@@ -653,3 +655,4 @@ ggplot() +
     x = "Year",
     y = "GDP per Capita (Log Scale)"
   )
+
