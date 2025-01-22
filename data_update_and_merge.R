@@ -109,7 +109,7 @@ cols_econ <- c(
   "iso3c", "year", "gdp_pc", "gdp_pc_imf", "inv_imf", 'inv_wb', "tax_havens_dummy",
   "resource_dummy", "emp_wb", "pop_wb", "pop_imf", "pop_mpd", "rent",
   "gov_spd_imf", "rgdpna", "rgdpo", "rnna", "labsh", "delta", "pop_pwt",
-  "emp_pwt", "avh", "hc", "rwtfpna", "rtfpna", "ctfp", "iso2c", "gdp_pc_wb_nom",
+  "emp_pwt", "avh", "hc", "rwtfpna", "rtfpna", "ctfp", "gdp_pc_wb_nom",
   "country", "aggregate_dummy", "gdp_source", "gdp_pc_growth"
 )
 

@@ -14,7 +14,7 @@ message("Completed data_update_and_merge.R.")
 
 ##### 3. Setting Parameters #####
 
-# --- Forecast Parameters ---
+# --- General Forecast Parameters ---
 
 # Store the "current" year after which economic forecasts start
 # (does not have to be the actual current year)
@@ -23,6 +23,12 @@ current_year <- 2024
 # UN population projections used in the model start from this year
 # (usually the year it is issued as there is no actual data for that year yet)
 UN_pop_projections_start_year <- 2024
+
+# The UN historical demographic data starts from this year for most countries
+detailed_demo_data_start_year <- 1950
+
+# Benchmark Country for Relative Variables
+benchmark_iso <- "USA"
 
 # --- Investment Ratio Parameters ---
 
@@ -99,6 +105,9 @@ use_demogr_TFP_model <- TRUE
 # (following year's deviation is x times this year's)
 migr_rate_dev_decay_factor <- 0.95
 
+# These are the benchmark years to calculate the average migration rate deviation from the model
+migr_dev_years_to_average <- c(2019, 2021, 2022, 2023)
+
 # --- Resource Economy Parameters ---
 
 # Using two limits for the mean and maximum rent level; if either is reached,
@@ -126,5 +135,4 @@ message("Completed long_term_GDP_forecaster.R.")
 
 sys_time_end <- Sys.time()
 elapsed_time <- sys_time_end - sys_time_start
-
-message("Script completed in ", round(elapsed_time, 2), " seconds.")
+elapsed_time

@@ -309,9 +309,12 @@ setnames(wb_data,
 # Calculate employment from labor force and unemployment
 wb_data[, emp_wb := labor_force_wb * (1 - unempl_wb / 100)]
 
+# Convert magnitudes to millions in World Bank employment data
+wb_data[, emp_wb := emp_wb / 1e6 ]
+
 # Select relevant columns
 wb_data <- wb_data[, .(
-  iso3c, country, year, gdp_pc_wb, gdp_pc_wb_nom, pop_wb, rent, emp_wb, 
+  iso3c, country, year, gdp_pc_wb, gdp_pc_wb_nom, pop_wb, rent, emp_wb, inv_wb, 
   labor_force_wb, unempl_wb
 )]
 
@@ -359,7 +362,7 @@ economic_data <- merge(
 
 economic_data <- merge(
   economic_data,
-  wb_data[, .(iso3c, year, gdp_pc_wb, gdp_pc_wb_nom, pop_wb, rent, emp_wb)],
+  wb_data,
   by = c('iso3c', 'year'),
   all = TRUE
 )

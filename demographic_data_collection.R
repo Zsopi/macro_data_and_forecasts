@@ -702,7 +702,6 @@ demographic_data <- merge ( demographic_data ,
 
 
 # Function to calculate working age population ratios among net migrants
-# Function to calculate zero migration working age population with flexible upper age limit
 calculate_working_age_pop <- function(dt, start_age, offset) {
   # Define the new variable name
   new_var <- paste0('migr_working_age_pop_', start_age, '_lifexp_offset_', offset)
